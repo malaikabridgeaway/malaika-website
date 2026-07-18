@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malaika Bridge Away Foundation — Empowering Today, Transforming Tomorrow</title>
+<meta name="description" content="Malaika Bridge Away Foundation is a Tanzanian NGO based in Mwanza improving lives through clean water projects, digital learning, educational support and youth talent development.">
+<meta property="og:title" content="Malaika Bridge Away Foundation">
+<meta property="og:description" content="Tanzanian NGO in Mwanza: clean water, digital learning, education and youth talent development. Empowering Today — Transforming Tomorrow.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/jpeg" href="assets/img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FDFBF7;
+    --ink: #231F20;
+    --ink-2: #4A4A4A;
+    --ink-3: #6E6866;
+    --line: #EAE4DC;
+    --terra: #B45F3A;      /* buttons & links — 4.5:1 on white */
+    --terra-dark: #9C4E2D;
+    --peach: #E5A988;      /* brand accent — decorative, on dark */
+    --dark: #231F20;
+    --dark-2: #2E2929;
+    --cream-on-dark: #FDFBF7;
+    --muted-on-dark: #B9B2AE;
+    --radius: 10px;
+    --shadow: 0 10px 30px rgba(35, 31, 32, .07);
+    --font-display: "Fraunces", Georgia, serif;
+    --font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+  body { background: var(--cream); color: var(--ink); font-family: var(--font-body); line-height: 1.7; font-size: 16px; }
+  img { max-width: 100%; display: block; }
+  a { color: var(--terra); }
+  h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; }
+
+  .skip-link { position: absolute; left: -999px; top: 0; background: var(--ink); color: #fff; padding: 10px 18px; z-index: 300; }
+  .skip-link:focus { left: 0; }
+  :focus-visible { outline: 3px solid var(--terra); outline-offset: 2px; }
+
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── Navigation ─────────────────────────────── */
+  header.nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(253, 251, 247, .92); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 12px 24px; max-width: 1240px; margin: 0 auto; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+  .brand img { height: 52px; width: 52px; object-fit: cover; border-radius: 50%; border: 1px solid var(--line); }
+  .brand-name { font-family: var(--font-display); font-weight: 700; font-size: 20px; letter-spacing: 2px; line-height: 1; }
+  .brand-sub { font-size: 10.5px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--terra); margin-top: 3px; }
+  nav.links { display: flex; align-items: center; gap: 26px; }
+  nav.links a { text-decoration: none; color: var(--ink-2); font-weight: 500; font-size: 14.5px; }
+  nav.links a:hover { color: var(--terra); }
+  .btn { display: inline-block; text-decoration: none; font-weight: 600; border-radius: 6px; transition: background .25s, color .25s, border-color .25s; cursor: pointer; }
+  .btn-primary { background: var(--terra); color: #fff; padding: 12px 26px; font-size: 14px; letter-spacing: .4px; }
+  .btn-primary:hover { background: var(--terra-dark); }
+  .btn-ghost { border: 1.5px solid rgba(253,251,247,.65); color: #fff; padding: 11px 24px; font-size: 14px; }
+  .btn-ghost:hover { background: rgba(253,251,247,.15); }
+  .btn-outline { border: 1.5px solid var(--terra); color: var(--terra); padding: 10px 22px; font-size: 14px; }
+  .btn-outline:hover { background: var(--terra); color: #fff; }
+  .nav-toggle { display: none; background: none; border: 1px solid var(--line); border-radius: 6px; padding: 8px 12px; font-size: 20px; color: var(--ink); cursor: pointer; }
+
+  /* ── Hero ───────────────────────────────────── */
+  .hero {
+    min-height: 620px; display: flex; flex-direction: column; justify-content: center; align-items: center;
+    text-align: center; color: #fff; padding: 90px 24px;
+    background:
+      linear-gradient(180deg, rgba(35,31,32,.62) 0%, rgba(35,31,32,.42) 55%, rgba(35,31,32,.68) 100%),
+      url("assets/img/hero.jpg") center 30% / cover no-repeat;
+  }
+  .hero .kicker { text-transform: uppercase; letter-spacing: 3px; font-size: 13px; color: var(--peach); font-weight: 600; margin-bottom: 18px; }
+  .hero h1 { font-size: clamp(34px, 5.5vw, 58px); font-weight: 700; max-width: 860px; margin-bottom: 20px; }
+  .hero p { font-size: clamp(16px, 2.2vw, 20px); max-width: 640px; margin-bottom: 36px; color: #F4EEE8; }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+
+  /* ── Pillars strip ──────────────────────────── */
+  .pillars { background: var(--dark); color: var(--cream-on-dark); }
+  .pillars .wrap { display: flex; justify-content: center; gap: clamp(30px, 8vw, 110px); padding: 20px 24px; flex-wrap: wrap; }
+  .pillar { text-transform: uppercase; letter-spacing: 2.5px; font-size: 13px; display: flex; align-items: center; gap: 10px; }
+  .pillar b { color: var(--peach); font-weight: 700; }
+
+  /* ── Sections ───────────────────────────────── */
+  section { padding: 88px 0; }
+  .kicker { display: block; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; color: var(--terra); font-weight: 600; margin-bottom: 10px; }
+  .section-head { text-align: center; max-width: 720px; margin: 0 auto 52px; }
+  .section-head h2 { font-size: clamp(28px, 4vw, 40px); margin-bottom: 14px; }
+  .section-head .rule { width: 54px; height: 3px; background: var(--peach); margin: 18px auto 0; border-radius: 2px; }
+  .section-head p.lead { color: var(--ink-2); font-size: 17px; }
+
+  /* About */
+  .about-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: start; }
+  .about-copy p { margin-bottom: 16px; color: var(--ink-2); }
+  .about-copy strong { color: var(--ink); }
+  .beliefs { list-style: none; margin: 22px 0 26px; display: grid; gap: 12px; }
+  .beliefs li { display: flex; gap: 12px; align-items: flex-start; color: var(--ink-2); }
+  .beliefs li::before { content: "✓"; color: var(--terra); font-weight: 700; margin-top: 1px; }
+  .vm-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 30px 26px; box-shadow: var(--shadow); }
+  .vm-card + .vm-card { margin-top: 22px; }
+  .vm-card h3 { font-size: 20px; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+  .vm-card p { color: var(--ink-2); font-size: 15px; }
+  .vm-card .tag { font-size: 11px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--terra); font-weight: 700; }
+  .where { margin-top: 26px; background: var(--cream); border-left: 3px solid var(--peach); padding: 16px 20px; color: var(--ink-2); font-size: 15px; }
+
+  /* Programs */
+  .programs { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+  .p-card { background: var(--cream); border: 1px solid var(--line); border-radius: var(--radius); padding: 34px 28px; transition: transform .25s, box-shadow .25s; }
+  .p-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+  .p-card .icon { font-size: 30px; margin-bottom: 14px; }
+  .p-card h3 { font-size: 19px; margin-bottom: 10px; }
+  .p-card p { color: var(--ink-2); font-size: 15px; }
+
+  /* Water project */
+  .project { }
+  .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin: 0 0 44px; }
+  .stat { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 20px 18px; text-align: center; }
+  .stat .num { font-family: var(--font-display); font-weight: 700; font-size: clamp(26px, 3.2vw, 36px); color: var(--ink); line-height: 1.1; }
+  .stat .lbl { margin-top: 6px; font-size: 13px; color: var(--ink-3); line-height: 1.45; }
+  .project-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 44px; align-items: center; }
+  .video-frame { background: #000; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); max-width: 380px; margin: 0 auto; }
+  .video-frame video { width: 100%; height: auto; display: block; }
+  .project-copy h3 { font-size: 24px; margin-bottom: 14px; }
+  .project-copy p { color: var(--ink-2); margin-bottom: 14px; }
+  .fact-list { list-style: none; margin: 6px 0 24px; display: grid; gap: 10px; }
+  .fact-list li { display: flex; gap: 12px; color: var(--ink-2); font-size: 15px; }
+  .fact-list li::before { content: "•"; color: var(--terra); font-weight: 700; }
+  .project-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+  .sdg-note { margin-top: 22px; font-size: 13.5px; color: var(--ink-3); }
+
+  /* Transparency (dark band) */
+  .transparency { background: var(--dark); color: var(--cream-on-dark); }
+  .transparency .section-head h2 { color: var(--cream-on-dark); }
+  .transparency .section-head .kicker { color: var(--peach); }
+  .transparency .section-head p.lead { color: var(--muted-on-dark); }
+  .trans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 54px; align-items: center; }
+  .donut-box { display: flex; align-items: center; gap: 34px; justify-content: center; flex-wrap: wrap; }
+  .donut { width: 210px; height: 210px; flex-shrink: 0; }
+  .donut .center-num { font-family: var(--font-display); font-weight: 700; font-size: 46px; fill: var(--cream-on-dark); }
+  .donut .center-lbl { font-size: 12.5px; fill: var(--muted-on-dark); letter-spacing: .4px; }
+  .legend { display: grid; gap: 16px; max-width: 330px; }
+  .legend-row { display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; color: var(--muted-on-dark); line-height: 1.5; }
+  .legend-dot { width: 12px; height: 12px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+  .legend-row b { color: var(--cream-on-dark); font-size: 16px; }
+  .legal-card { background: var(--dark-2); border: 1px solid #3A3434; border-radius: var(--radius); padding: 30px; }
+  .legal-card h3 { font-size: 19px; margin-bottom: 16px; color: var(--cream-on-dark); }
+  .legal-card dl { display: grid; grid-template-columns: auto 1fr; gap: 8px 18px; font-size: 14.5px; }
+  .legal-card dt { color: var(--muted-on-dark); }
+  .legal-card dd { color: var(--cream-on-dark); font-weight: 500; }
+  .legal-card .docs-links { margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .legal-card .btn-ghost { border-color: rgba(229,169,136,.6); color: var(--peach); }
+  .legal-card .btn-ghost:hover { background: rgba(229,169,136,.12); }
+
+  /* Documents */
+  .docs { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .cards-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+  .doc-card { background: var(--cream); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 22px; text-decoration: none; color: var(--ink); transition: transform .25s, box-shadow .25s; display: flex; flex-direction: column; gap: 8px; }
+  .doc-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .doc-card .icon { font-size: 26px; }
+  .doc-card h3 { font-size: 16px; font-family: var(--font-body); font-weight: 600; }
+  .doc-card p { font-size: 13.5px; color: var(--ink-3); flex-grow: 1; }
+  .doc-card span.open { color: var(--terra); font-weight: 600; font-size: 13.5px; }
+
+  /* Donate */
+  .donate { text-align: center; }
+  .donate .inner { max-width: 680px; margin: 0 auto; }
+  .donate h2 { font-size: clamp(28px, 4vw, 38px); margin-bottom: 16px; }
+  .donate p { color: var(--ink-2); margin-bottom: 30px; }
+
+  /* Contact */
+  .contact { background: #fff; border-top: 1px solid var(--line); }
+  .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .c-card { background: var(--cream); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 26px; }
+  .c-card h3 { font-size: 17px; margin-bottom: 4px; }
+  .c-card .role { font-size: 12px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--terra); font-weight: 700; margin-bottom: 14px; }
+  .c-card p { font-size: 14.5px; color: var(--ink-2); margin-bottom: 6px; overflow-wrap: anywhere; }
+  .socials { text-align: center; margin-top: 44px; }
+  .socials p { color: var(--ink-3); font-size: 14px; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1.5px; }
+  .socials .handles { display: flex; gap: 26px; justify-content: center; flex-wrap: wrap; font-size: 15px; }
+
+  /* Footer */
+  footer { background: #1A1718; color: #8E8683; padding: 36px 24px; text-align: center; font-size: 13.5px; }
+  footer .foot-brand { color: var(--cream-on-dark); font-family: var(--font-display); letter-spacing: 2px; font-size: 16px; margin-bottom: 8px; }
+  footer a { color: var(--peach); text-decoration: none; }
+
+  /* Reveal on scroll */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* ── Responsive ─────────────────────────────── */
+  @media (max-width: 960px) {
+    .about-grid, .project-grid, .trans-grid { grid-template-columns: 1fr; }
+    .cards-3 { grid-template-columns: 1fr; }
+    .cards-4 { grid-template-columns: repeat(2, 1fr); }
+    .stat-row { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: 1fr; }
+    nav.links {
+      display: none; position: absolute; top: 100%; left: 0; right: 0;
+      background: var(--cream); border-bottom: 1px solid var(--line);
+      flex-direction: column; padding: 18px 24px 24px; gap: 16px;
+    }
+    nav.links.open { display: flex; }
+    .nav-toggle { display: block; }
+  }
+  @media (max-width: 520px) {
+    .cards-4 { grid-template-columns: 1fr; }
+    .stat-row { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    section { padding: 64px 0; }
+    .btn-primary { padding: 12px 18px; }
+    .donate .btn-primary { overflow-wrap: anywhere; }
+  }
+</style>
+</head>
+<body id="top">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <img src="assets/img/logo.jpg" alt="Malaika Bridge Away Foundation logo">
+      <span>
+        <span class="brand-name">MALAIKA</span><br>
+        <span class="brand-sub">Bridge Away Foundation</span>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">☰</button>
+    <nav class="links" id="site-nav" aria-label="Main navigation">
+      <a href="#about">Who We Are</a>
+      <a href="#programs">What We Do</a>
+      <a href="#water-project">Water Project</a>
+      <a href="#transparency">Transparency</a>
+      <a href="#documents">Documents</a>
+      <a href="#contact">Contact</a>
+      <a href="#donate" class="btn btn-primary">Donate</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero" aria-label="Introduction">
+    <span class="kicker">Registered NGO · Mwanza, Tanzania</span>
+    <h1>Malaika Bridge Away Foundation</h1>
+    <p>Empowering Today — Transforming Tomorrow. We bridge the gap between community potential and generational opportunity through clean water, education and youth talent.</p>
+    <div class="hero-cta">
+      <a href="#water-project" class="btn btn-primary">Support a Well</a>
+      <a href="#about" class="btn btn-ghost">Learn More</a>
+    </div>
+  </section>
+
+  <!-- Pillars -->
+  <div class="pillars" role="presentation">
+    <div class="wrap">
+      <div class="pillar">🙌🏽 <b>Empower</b></div>
+      <div class="pillar">🏫 <b>Educate</b></div>
+      <div class="pillar">📈 <b>Elevate</b></div>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">About Us</span>
+        <h2>Who We Are</h2>
+        <p class="lead">A community-driven non-governmental organization dedicated to improving the lives of vulnerable and underserved communities.</p>
+        <div class="rule"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p><strong>Malaika Bridge Away Foundation</strong> works through education support, access to clean water, digital learning opportunities and youth talent development. We believe every child and young person deserves:</p>
+          <ul class="beliefs">
+            <li>Access to quality education</li>
+            <li>Safe and clean water</li>
+            <li>Opportunities to discover their talents</li>
+            <li>A supportive environment to grow and succeed</li>
+          </ul>
+          <p>Our work focuses on empowering communities with practical solutions that create long-term impact — founded on the belief that the place where one is born should never determine destiny, turning the simple act of showing up for a community into lasting, generational change.</p>
+          <p>Malaika does not work around communities; it works <em>with</em> them, turning local knowledge into lasting solutions.</p>
+          <div class="where">
+            📍 <strong>Where we are:</strong> based in Sumve, Kwimba District, Mwanza Region — on the shores of Lake Victoria — with impact extending to communities in need across Tanzania.
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="vm-card">
+            <span class="tag">Vision</span>
+            <h3>What must be</h3>
+            <p>Empowered and resilient communities where every learner has equal access to quality education, opportunity, and hope.</p>
+          </div>
+          <div class="vm-card">
+            <span class="tag">Mission</span>
+            <h3>How we get there</h3>
+            <p>To mobilize resources, partnerships, and community participation to improve learning conditions and community wellbeing through clean water projects, digital access, educational support, and talent development initiatives.</p>
+          </div>
+          <div class="vm-card">
+            <span class="tag">Objectives</span>
+            <h3>Six connected goals</h3>
+            <p>Support schools lacking essential infrastructure · improve access to clean water and sanitation · expand digital learning · strengthen youth empowerment and creativity · mobilize sustainable partnerships · promote education and community development.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs -->
+  <section id="programs" class="programs">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">What We Do</span>
+        <h2>Our Programs</h2>
+        <p class="lead">Infrastructure and human potential together — lasting impact is only possible when both are met.</p>
+        <div class="rule"></div>
+      </div>
+      <div class="cards-3">
+        <div class="p-card reveal">
+          <div class="icon">💧</div>
+          <h3>Clean Water Projects</h3>
+          <p>We support the construction of wells and improved access to safe water. Clean water is the silent multiplier of every development goal: when a child no longer spends hours collecting water, those hours become classroom hours — and classroom hours become future.</p>
+        </div>
+        <div class="p-card reveal">
+          <div class="icon">💻</div>
+          <h3>Digital Learning Support</h3>
+          <p>Computers, digital devices, learning materials and access support for schools and students. In a world where digital fluency is as essential as reading and writing, access to technology is not a luxury — it is an act of equity.</p>
+        </div>
+        <div class="p-card reveal">
+          <div class="icon">🎭</div>
+          <h3>Malaika Talent Development</h3>
+          <p>Through our Talent Club we nurture singing, dancing, acting, comedy, fashion and creative arts — safe spaces where young people build confidence and skills. The Talent Club is where dreams first learn to speak out loud.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Water Project -->
+  <section id="water-project" class="project">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Priority Project · Bumyengeja, Sumve Ward</span>
+        <h2>Clean Water for Two Schools and a Community</h2>
+        <p class="lead">A community borehole for Bumyengeja Primary &amp; Secondary Schools and the ~450 surrounding families.</p>
+        <div class="rule"></div>
+      </div>
+
+      <div class="stat-row reveal">
+        <div class="stat"><div class="num">3,100</div><div class="lbl">direct beneficiaries</div></div>
+        <div class="stat"><div class="num">1,268</div><div class="lbl">students &amp; teachers in 2 schools</div></div>
+        <div class="stat"><div class="num">46,500 L</div><div class="lbl">of safe water needed per day (WHO standard, 15 L/person)</div></div>
+        <div class="stat"><div class="num">3–10 h</div><div class="lbl">lost per student weekly collecting water</div></div>
+      </div>
+
+      <div class="project-grid">
+        <div class="reveal">
+          <div class="video-frame">
+            <video controls preload="metadata" playsinline>
+              <source src="assets/video/clean-water-project.mp4" type="video/mp4">
+              Your browser does not support video playback.
+            </video>
+          </div>
+        </div>
+        <div class="project-copy reveal">
+          <h3>When you are thirsty, but clean water is far away</h3>
+          <p>Today, students and families secure their daily water from shallow, open ponds that are highly vulnerable to contamination — or walk to sources far from home:</p>
+          <ul class="fact-list">
+            <li>The nearest water sources are 1.5–3 km away — 45 minutes to 2 hours per trip</li>
+            <li>Households make 2–4 trips every day</li>
+            <li>Teachers report direct impact on absenteeism, performance and school health</li>
+          </ul>
+          <p>Our mandate is clear: replace these dangerous, provisional sources with a protected community <strong>borehole with manual or solar pumping</strong> and community distribution points, inside the school ecosystem — guaranteeing health, sanitation and a dignified future.</p>
+          <div class="project-cta">
+            <a class="btn btn-primary" href="assets/docs/propuesta-colaboracion-academica.pdf" target="_blank" rel="noopener">Project Proposal (PDF)</a>
+            <a class="btn btn-outline" href="assets/docs/mbaf-context.pdf" target="_blank" rel="noopener">Regional Context &amp; Data (PDF)</a>
+          </div>
+          <p class="sdg-note">Aligned with the UN Sustainable Development Goals — SDG 4 (Quality Education), SDG 6 (Clean Water &amp; Sanitation) and SDG 17 (Partnerships). We also invite engineering faculties to join as academic partners in design, supervision and evaluation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transparency -->
+  <section id="transparency" class="transparency">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Accountability</span>
+        <h2>Transparency &amp; Legal Standing</h2>
+        <p class="lead">A registered Tanzanian NGO, with documentation available to whomever, whenever required.</p>
+        <div class="rule"></div>
+      </div>
+      <div class="trans-grid">
+        <div class="donut-box reveal">
+          <svg class="donut" viewBox="0 0 200 200" role="img" aria-label="Fund allocation: 85% direct field programs, 15% core operations">
+            <g transform="rotate(-90 100 100)">
+              <circle cx="100" cy="100" r="80" fill="none" stroke="#E5A988" stroke-width="26"
+                      pathLength="100" stroke-dasharray="84 16" stroke-dashoffset="-0.5">
+                <title>Direct field programs — 85%</title>
+              </circle>
+              <circle cx="100" cy="100" r="80" fill="none" stroke="#8A8285" stroke-width="26"
+                      pathLength="100" stroke-dasharray="14 86" stroke-dashoffset="-85.5">
+                <title>Core operations — 15%</title>
+              </circle>
+            </g>
+            <text class="center-num" x="100" y="104" text-anchor="middle">85%</text>
+            <text class="center-lbl" x="100" y="126" text-anchor="middle">to field programs</text>
+          </svg>
+          <div class="legend">
+            <div class="legend-row"><span class="legend-dot" style="background:#E5A988"></span><span><b>85%</b> — Direct field program expenditures: well drilling &amp; structural supplies</span></div>
+            <div class="legend-row"><span class="legend-dot" style="background:#8A8285"></span><span><b>15%</b> — Core operations, resource development &amp; compliance management</span></div>
+          </div>
+        </div>
+        <div class="legal-card reveal">
+          <h3>Organization &amp; Legal Details</h3>
+          <dl>
+            <dt>Name</dt><dd>Malaika Bridge Away Foundation</dd>
+            <dt>Type</dt><dd>Non-Governmental Organization (NGO)</dd>
+            <dt>Registration No.</dt><dd>00NGO/R/9765</dd>
+            <dt>Registered</dt><dd>30 April 2026</dd>
+            <dt>Head Office</dt><dd>Bumyengeja Street, Sumve, Kwimba District, Mwanza, Tanzania</dd>
+            <dt>Postal Code</dt><dd>2213</dd>
+          </dl>
+          <div class="docs-links">
+            <a class="btn btn-ghost" href="assets/docs/certificate.pdf" target="_blank" rel="noopener">Registration Certificate</a>
+            <a class="btn btn-ghost" href="assets/img/appendix-a.jpg" target="_blank" rel="noopener">Constitution — Appendix A</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Documents -->
+  <section id="documents" class="docs">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Library</span>
+        <h2>Official Documents</h2>
+        <div class="rule"></div>
+      </div>
+      <div class="cards-4">
+        <a class="doc-card reveal" href="assets/docs/certificate.pdf" target="_blank" rel="noopener">
+          <span class="icon">📜</span>
+          <h3>Registration Certificate</h3>
+          <p>Official NGO registration certificate No. 00NGO/R/9765.</p>
+          <span class="open">Open PDF →</span>
+        </a>
+        <a class="doc-card reveal" href="assets/img/appendix-a.jpg" target="_blank" rel="noopener">
+          <span class="icon">🖋️</span>
+          <h3>Constitution — Appendix A</h3>
+          <p>Legal document of incorporation of the Foundation.</p>
+          <span class="open">View document →</span>
+        </a>
+        <a class="doc-card reveal" href="assets/docs/mbaf-context.pdf" target="_blank" rel="noopener">
+          <span class="icon">🌍</span>
+          <h3>Environment &amp; Context</h3>
+          <p>Regional background and data — UN, World Bank, UNICEF, UNDP sources (2024–2025).</p>
+          <span class="open">Open PDF →</span>
+        </a>
+        <a class="doc-card reveal" href="assets/docs/propuesta-colaboracion-academica.pdf" target="_blank" rel="noopener">
+          <span class="icon">🎓</span>
+          <h3>Academic Collaboration Proposal</h3>
+          <p>Clean water initiative proposal for Engineering Faculties (in Spanish).</p>
+          <span class="open">Open PDF →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Donate -->
+  <section id="donate" class="donate">
+    <div class="wrap inner reveal">
+      <span class="kicker">Get Involved</span>
+      <h2>Every Contribution Becomes Classroom Hours</h2>
+      <p>Whether you would like to donate, sponsor part of the well project, or partner with us as an institution, university or company — write to us and we will respond personally with all the details you need.</p>
+      <a class="btn btn-primary" href="mailto:malaika.bridgeaway@gmail.com?subject=Donation%20%2F%20Collaboration%20—%20Malaika%20Bridge%20Away%20Foundation">✉️ malaika.bridgeaway@gmail.com</a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Contact</span>
+        <h2>Talk to Us</h2>
+        <div class="rule"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="c-card reveal">
+          <h3>Angela Mburanya</h3>
+          <div class="role">Head Office · Tanzania</div>
+          <p>Sumve, Kwimba District, Mwanza</p>
+          <p>📞 +255 650 568 803</p>
+          <p>✉️ <a href="mailto:malaika.bridgeaway@gmail.com">malaika.bridgeaway@gmail.com</a></p>
+        </div>
+        <div class="c-card reveal">
+          <h3>Juan Menor</h3>
+          <div class="role">International Partnership · Madrid, Spain</div>
+          <p>📞 / WhatsApp +34 619 743 855</p>
+          <p>✉️ <a href="mailto:jlv_menor@yahoo.es">jlv_menor@yahoo.es</a></p>
+        </div>
+        <div class="c-card reveal">
+          <h3>Irene Muñoz</h3>
+          <div class="role">International Partnership · Barcelona, Spain</div>
+          <p>📞 / WhatsApp +34 647 387 993</p>
+          <p>✉️ <a href="mailto:Irenemunoz11@gmail.es">Irenemunoz11@gmail.es</a></p>
+        </div>
+      </div>
+      <div class="socials reveal">
+        <p>Follow our work</p>
+        <div class="handles">
+          <a href="https://www.instagram.com/malaikabridgeawafoundation" target="_blank" rel="noopener">Instagram · @malaikabridgeawafoundation</a>
+          <a href="https://www.tiktok.com/@malaikabridgeawayfnd" target="_blank" rel="noopener">TikTok · @malaikabridgeawayfnd</a>
+          <span>Facebook · Malaika Bridge Away Foundation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot-brand">MALAIKA BRIDGE AWAY FOUNDATION</div>
+  <p>Empower · Educate · Elevate — Mwanza, Tanzania</p>
+  <p>© 2026 Malaika Bridge Away Foundation. All rights reserved. · <a href="#top">Back to top ↑</a></p>
+</footer>
+
+<script>
+  // Mobile menu
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('nav.links');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  // Reveal on scroll
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>

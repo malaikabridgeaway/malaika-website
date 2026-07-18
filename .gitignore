@@ -1,0 +1,11 @@
+# macOS / zip-extraction junk
+__MACOSX/
+.DS_Store
+._*
+
+# Windows
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
