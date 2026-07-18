@@ -67,7 +67,8 @@
   .btn-outline:hover { background: var(--terra); color: #fff; }
   .nav-right { display: flex; align-items: center; gap: 14px; }
   .lang-switch { display: flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: #fff; }
-  .lang-btn { background: none; border: none; padding: 7px 11px; font: 600 12.5px var(--font-body); color: var(--ink-2); cursor: pointer; letter-spacing: .5px; }
+  .lang-btn { display: flex; align-items: center; gap: 6px; background: none; border: none; padding: 7px 10px; font: 600 12.5px var(--font-body); color: var(--ink-2); cursor: pointer; letter-spacing: .5px; }
+  .lang-btn svg { width: 17px; height: auto; border-radius: 2px; display: block; flex-shrink: 0; }
   .lang-btn + .lang-btn { border-left: 1px solid var(--line); }
   .lang-btn.active { background: var(--terra); color: #fff; }
   .lang-btn:hover:not(.active) { color: var(--terra); }
@@ -254,9 +255,18 @@
     </nav>
     <div class="nav-right">
       <div class="lang-switch" role="group" aria-label="Language">
-        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
-        <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
-        <button type="button" class="lang-btn" data-lang="sw" aria-pressed="false">SW</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">
+          <svg viewBox="0 0 60 40" aria-hidden="true" focusable="false"><rect width="60" height="40" fill="#012169"/><path d="M0,0 60,40 M60,0 0,40" stroke="#fff" stroke-width="8"/><path d="M0,0 60,40 M60,0 0,40" stroke="#C8102E" stroke-width="3.5"/><path d="M30,0 V40 M0,20 H60" stroke="#fff" stroke-width="13"/><path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="7.5"/></svg>
+          EN
+        </button>
+        <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">
+          <svg viewBox="0 0 60 40" aria-hidden="true" focusable="false"><rect width="60" height="40" fill="#AA151B"/><rect y="10" width="60" height="20" fill="#F1BF00"/></svg>
+          ES
+        </button>
+        <button type="button" class="lang-btn" data-lang="sw" aria-pressed="false">
+          <svg viewBox="0 0 60 40" aria-hidden="true" focusable="false"><rect width="60" height="40" fill="#1EB53A"/><path d="M0,40 60,0 V40 Z" fill="#00A3DD"/><line x1="0" y1="40" x2="60" y2="0" stroke="#FCD116" stroke-width="13"/><line x1="0" y1="40" x2="60" y2="0" stroke="#000" stroke-width="8"/></svg>
+          SW
+        </button>
       </div>
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" data-i18n-aria="nav.menu" aria-label="Menu">☰</button>
     </div>
