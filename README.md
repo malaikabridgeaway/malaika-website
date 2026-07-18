@@ -10,10 +10,19 @@ digital learning, educational support and youth talent development.
 
 ```
 index.html              The whole site (single page, no build step required)
+assets/js/i18n.js       Translations (English / Spanish / Swahili) + language switcher
 assets/img/             Logo, hero photo, constitution appendix
 assets/docs/            Certificate, regional context report, academic proposal (PDFs)
 assets/video/           Clean water project video (~80 MB)
 ```
+
+## Languages
+
+The site is trilingual — **English, Spanish and Swahili** — switchable with the
+EN / ES / SW buttons in the navigation bar. The choice is remembered between visits,
+and first-time visitors get the language their browser is set to. You can also link
+directly to a language: `...?lang=es` or `...?lang=sw`. All translations live in
+`assets/js/i18n.js`; edit the strings there to adjust wording.
 
 ## Publishing on GitHub Pages
 
