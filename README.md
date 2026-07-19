@@ -6,12 +6,16 @@ digital learning, educational support and youth talent development.
 
 > Empowering Today — Transforming Tomorrow
 
+**Live site: https://malaikabridgeaway.org** (GitHub Pages, custom domain via Namecheap DNS)
+
 ## Structure
 
 ```
 index.html              The whole site (single page, no build step required)
+404.html                Not-found page served by GitHub Pages
+robots.txt, sitemap.xml SEO crawler files
 assets/js/i18n.js       Translations (English / Spanish / Swahili) + language switcher
-assets/img/             Logo, hero photo, constitution appendix
+assets/img/             Logo, hero photo, social-share image, favicons, constitution appendix
 assets/docs/            Certificate, regional context report, academic proposal (PDFs)
 assets/video/           Clean water project video (~80 MB)
 ```
@@ -24,21 +28,15 @@ and first-time visitors get the language their browser is set to. You can also l
 directly to a language: `...?lang=es` or `...?lang=sw`. All translations live in
 `assets/js/i18n.js`; edit the strings there to adjust wording.
 
-## Publishing on GitHub Pages
+## Deployment
 
-1. Create a new repository on GitHub (e.g. `malaika-website`), **without** adding a README.
-2. From this folder, push the existing commit:
+The site is served by **GitHub Pages** from the `main` branch root, with the custom
+domain `malaikabridgeaway.org` (the `CNAME` file) pointed at GitHub via Namecheap DNS
+and HTTPS enforced. **Every push to `main` redeploys the live site automatically**
+within about a minute — there are no other deployment steps.
 
-   ```bash
-   git remote add origin https://github.com/<YOUR-USER>/malaika-website.git
-   git branch -M main
-   git push -u origin main
-   ```
-
-3. On GitHub: **Settings → Pages → Build and deployment**
-   - Source: *Deploy from a branch*
-   - Branch: `main`, folder `/ (root)` → **Save**
-4. After a minute the site is live at `https://<YOUR-USER>.github.io/malaika-website/`.
+Visitor analytics: [GoatCounter](https://malaikabridgeaway.goatcounter.com) (snippet at
+the bottom of `index.html`).
 
 ## Notes
 
@@ -46,7 +44,4 @@ directly to a language: `...?lang=es` or `...?lang=sw`. All translations live in
   first push will take a while on a slow connection. If you ever want a faster-loading
   site, re-encode it smaller with:
   `ffmpeg -i assets/video/clean-water-project.mp4 -vf scale=720:-2 -crf 28 -preset slow -c:a aac -b:a 96k out.mp4`
-- For nicer social-media link previews, add an `og:image` meta tag in `index.html` with the
-  **absolute** URL of the hero image once you know the final site URL, e.g.
-  `<meta property="og:image" content="https://<YOUR-USER>.github.io/malaika-website/assets/img/hero.jpg">`
 - No build tools, frameworks or servers needed — it is plain HTML/CSS/JS.
