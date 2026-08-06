@@ -10,9 +10,12 @@ permissions:
   pages: write
   id-token: write
 
+# Queue deploys instead of cancelling the one in flight — deploys here take
+# ~8 minutes (80 MB video artifact) and cancel-in-progress left the site
+# stale when several commits landed in a row.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -41,3 +44,7 @@ jobs:
 
       - id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # GitHub's deployment queue is sometimes slow; the default 10 min
+          # timeout has aborted otherwise-healthy deploys.
+          timeout: 1800000
