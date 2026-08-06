@@ -52,17 +52,24 @@ NGO (Reg. No. 00NGO/R/9765) in Sumve, Kwimba District, Mwanza. Live at
 
 ## Photo & video gallery (#gallery section)
 
-- **Photos**: files in `assets/gallery/`, named `YYYY-MM-DD-description.jpg` (the
-  deploy workflow regenerates `gallery.json` from that folder on every deploy, sorted
-  newest-first by filename; the committed `gallery.json` is only a local-preview seed).
-  Non-technical NGO members upload via GitHub's web UI — instructions for them live in
-  `UPLOAD-GUIDE.md` (internal, not published). Do not hand-edit `gallery.json` and
-  expect it to stick.
-- **Videos**: NOT stored in the repo (too large). They belong on the foundation's
-  YouTube channel; the page embeds the channel's uploads playlist. The playlist ID goes
-  in the `YT_PLAYLIST` constant in `index.html`'s inline script — while it is empty the
-  Videos block stays hidden. As of August 2026 the channel does not exist yet
-  (waiting for the owner to activate it with malaika.bridgeaway@gmail.com).
+- **Primary mechanism — Google Drive**: the NGO team uploads media to two Drive
+  folders in the foundation's account (malaika.bridgeaway@gmail.com), shared as
+  "Anyone with the link – Viewer" (uploaders are added per-Gmail as Editor). The page
+  embeds each folder via `https://drive.google.com/embeddedfolderview?id=<ID>#grid`.
+  The folder IDs go in the `DRIVE_PHOTOS_FOLDER` / `DRIVE_VIDEOS_FOLDER` constants in
+  `index.html`'s inline script. While an ID is empty, that block is hidden (videos) or
+  falls back to the repo grid (photos). As of August 2026 the folders do not exist
+  yet — waiting for the owner to create and share them.
+- **Fallback photo grid**: files in `assets/gallery/` named `YYYY-MM-DD-description.jpg`;
+  the deploy workflow regenerates `gallery.json` from that folder on every deploy
+  (committed `gallery.json` is only a local-preview seed; do not hand-edit it). This
+  path becomes dead code once `DRIVE_PHOTOS_FOLDER` is set — keep it until then.
+- Uploader instructions live in `UPLOAD-GUIDE.md` (internal, not published; the owner
+  shares it via the GitHub blob URL).
+- Caveat to remember: Drive files under heavy traffic can hit Google's download quota
+  and temporarily fail to render; if the site outgrows Drive, videos should move to a
+  YouTube channel (embed the uploads playlist) — there is no `YT_PLAYLIST` constant
+  anymore, it was replaced by the Drive design.
 
 ## Design system
 
