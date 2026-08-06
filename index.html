@@ -142,13 +142,12 @@
   /* ── Hero ───────────────────────────────────── */
   .hero {
     min-height: 620px; display: flex; flex-direction: column; justify-content: center; align-items: center;
-    text-align: center; color: #fff;
-    /* top padding clears the branding painted into the photo (~top 23% of its width) */
-    padding: clamp(150px, 24vw, 350px) 24px 90px;
+    text-align: center; color: #fff; padding: 90px 24px;
     background:
-      linear-gradient(180deg, rgba(35,31,32,.30) 0%, rgba(35,31,32,.45) 55%, rgba(35,31,32,.68) 100%),
-      url("assets/img/hero.jpg") center top / cover no-repeat;
+      linear-gradient(180deg, rgba(35,31,32,.55) 0%, rgba(35,31,32,.42) 55%, rgba(35,31,32,.68) 100%),
+      url("assets/img/hero.jpg") center 30% / cover no-repeat;
   }
+  .hero-logo { width: 96px; height: 96px; object-fit: cover; border-radius: 50%; border: 2px solid rgba(253,251,247,.85); box-shadow: 0 8px 24px rgba(0,0,0,.35); margin-bottom: 20px; }
   .hero .kicker { text-transform: uppercase; letter-spacing: 3px; font-size: 13px; color: var(--peach); font-weight: 600; margin-bottom: 18px; }
   .hero h1 { font-size: clamp(34px, 5.5vw, 58px); font-weight: 700; max-width: 860px; margin-bottom: 16px; }
   .hero .motto { font-family: var(--font-display); font-style: italic; font-size: clamp(19px, 2.8vw, 26px); color: var(--peach); margin-bottom: 18px; }
@@ -352,6 +351,7 @@
 
   <!-- Hero -->
   <section class="hero" aria-label="Introduction">
+    <img class="hero-logo" src="assets/img/logo.jpg" alt="" aria-hidden="true" width="96" height="96">
     <span class="kicker" data-i18n="hero.kicker">Registered NGO · Mwanza, Tanzania</span>
     <h1>Malaika Bridge Away Foundation</h1>
     <!-- Motto stays in English in every language (owner decision) — no data-i18n -->
