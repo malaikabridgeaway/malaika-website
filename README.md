@@ -16,6 +16,7 @@ index.html              The whole site (single page, no build step required)
 robots.txt, sitemap.xml SEO crawler files
 assets/js/i18n.js       Translations (English / Spanish / Swahili) + language switcher
 assets/img/             Logo, hero photo, social-share image, favicons, constitution appendix
+assets/gallery/         Photo gallery — drop images here (see UPLOAD-GUIDE.md)
 assets/docs/            Certificate, regional context report, academic proposal (PDFs)
 assets/video/           Clean water project video (~80 MB)
 ```

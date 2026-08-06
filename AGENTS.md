@@ -2,8 +2,8 @@
 
 Internal instructions for any AI agent (Claude Code, Copilot, Cursor, etc.) editing this
 repo. This file is **not published** on the website — the deploy workflow
-(`.github/workflows/deploy.yml`) deletes it, together with `README.md`, before
-uploading the site. Keep it that way.
+(`.github/workflows/deploy.yml`) deletes it, together with `README.md` and
+`UPLOAD-GUIDE.md`, before uploading the site. Keep it that way.
 
 ## What this repository is
 
@@ -49,6 +49,20 @@ NGO (Reg. No. 00NGO/R/9765) in Sumve, Kwimba District, Mwanza. Live at
 7. When you change page content, keep the SEO layer in sync: `<title>`, meta
    description, Open Graph/Twitter tags, the JSON-LD block (NGO + WebSite schema in
    `<head>`), and `sitemap.xml` `<lastmod>`.
+
+## Photo & video gallery (#gallery section)
+
+- **Photos**: files in `assets/gallery/`, named `YYYY-MM-DD-description.jpg` (the
+  deploy workflow regenerates `gallery.json` from that folder on every deploy, sorted
+  newest-first by filename; the committed `gallery.json` is only a local-preview seed).
+  Non-technical NGO members upload via GitHub's web UI — instructions for them live in
+  `UPLOAD-GUIDE.md` (internal, not published). Do not hand-edit `gallery.json` and
+  expect it to stick.
+- **Videos**: NOT stored in the repo (too large). They belong on the foundation's
+  YouTube channel; the page embeds the channel's uploads playlist. The playlist ID goes
+  in the `YT_PLAYLIST` constant in `index.html`'s inline script — while it is empty the
+  Videos block stays hidden. As of August 2026 the channel does not exist yet
+  (waiting for the owner to activate it with malaika.bridgeaway@gmail.com).
 
 ## Design system
 

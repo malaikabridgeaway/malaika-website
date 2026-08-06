@@ -23,9 +23,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # The photo gallery lists whatever is in assets/gallery/ — anyone with
+      # write access can drop images there and the site picks them up.
+      - name: Build photo gallery manifest
+        run: |
+          ls -1 assets/gallery 2>/dev/null | grep -iE '\.(jpe?g|png|webp|gif)$' | sort -r \
+            | jq -R -s 'split("\n") | map(select(length > 0))' > gallery.json || echo '[]' > gallery.json
+          cat gallery.json
+
       # Internal files: present in the repo, never published on the website.
       - name: Strip internal files from the published site
-        run: rm -f AGENTS.md README.md _config.yml
+        run: rm -f AGENTS.md README.md UPLOAD-GUIDE.md _config.yml
 
       - uses: actions/upload-pages-artifact@v3
         with:
