@@ -1,8 +1,9 @@
 # AGENTS.md — rules for AI agents working on this repository
 
 Internal instructions for any AI agent (Claude Code, Copilot, Cursor, etc.) editing this
-repo. This file is **not published** on the website — it is excluded in `_config.yml`,
-together with `README.md`. Keep it that way.
+repo. This file is **not published** on the website — the deploy workflow
+(`.github/workflows/deploy.yml`) deletes it, together with `README.md`, before
+uploading the site. Keep it that way.
 
 ## What this repository is
 
@@ -10,9 +11,11 @@ The official website of the **Malaika Bridge Away Foundation**, a registered Tan
 NGO (Reg. No. 00NGO/R/9765) in Sumve, Kwimba District, Mwanza. Live at
 **https://malaikabridgeaway.org**.
 
-- Hosting: **GitHub Pages** from the `main` branch root, custom domain via the `CNAME`
-  file, HTTPS enforced. DNS lives in **Namecheap** (4 apex A records to GitHub Pages +
-  `www` CNAME to `malaikabridgeaway.github.io`).
+- Hosting: **GitHub Pages**, deployed by the GitHub Actions workflow
+  `.github/workflows/deploy.yml` on every push to `main` (Pages build type is
+  "workflow", NOT branch/Jekyll). Custom domain `malaikabridgeaway.org` with HTTPS
+  enforced. DNS lives in **Namecheap** (4 apex A records to GitHub Pages + `www` CNAME
+  to `malaikabridgeaway.github.io`).
 - **Every push to `main` deploys to production in ~1 minute.** There is no staging.
   Verify changes locally (open `index.html` in a browser) before pushing.
 - Plain HTML/CSS/JS. No build step, no frameworks, no package manager. Do not introduce
@@ -35,9 +38,11 @@ NGO (Reg. No. 00NGO/R/9765) in Sumve, Kwimba District, Mwanza. Live at
    only analytics (dashboard: https://malaikabridgeaway.goatcounter.com).
 5. **No files over 50 MB** (GitHub warns; 100 MB is a hard block). The existing 80 MB
    video is a known grandfathered exception.
-6. **Internal docs must not reach the published site.** GitHub Pages publishes every
-   file in the repo unless excluded in `_config.yml` → `exclude:`. Add any new internal
-   file (notes, plans, this file) to that list, and verify it 404s after deploy.
+6. **Internal docs must not reach the published site.** The deploy workflow publishes
+   every file in the repo except those deleted in its "Strip internal files" step
+   (`.github/workflows/deploy.yml`). Add any new internal file (notes, plans, this
+   file) to that `rm` line, and verify it 404s after deploy. Note: Jekyll
+   `_config.yml` excludes do NOT work — GitHub deploys this repo without Jekyll.
 7. When you change page content, keep the SEO layer in sync: `<title>`, meta
    description, Open Graph/Twitter tags, the JSON-LD block (NGO + WebSite schema in
    `<head>`), and `sitemap.xml` `<lastmod>`.

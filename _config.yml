@@ -1,7 +1,0 @@
-# GitHub Pages (Jekyll) config — used ONLY to keep internal files out of the
-# published site. Everything else is served as-is (no theme, no processing:
-# files without YAML front matter are copied verbatim).
-exclude:
-  - AGENTS.md
-  - README.md
-  - _config.yml
