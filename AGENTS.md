@@ -31,6 +31,9 @@ NGO (Reg. No. 00NGO/R/9765) in Sumve, Kwimba District, Mwanza. Live at
    inline in `index.html` (it is the no-JS fallback) AND as the `en` keys in
    `assets/js/i18n.js`; Spanish (`es`) and Swahili (`sw`) live in `i18n.js` only. A new
    visible string needs: inline English + `data-i18n` attribute + `en`/`es`/`sw` keys.
+   **Exception (owner decision):** the hero motto "Empowering Today — Transforming
+   Tomorrow." (`.hero .motto`) has no `data-i18n` on purpose — it must always appear in
+   English in every language. Do not translate it or add a translation key.
 3. **Do not delete or rename these files** — external things depend on them:
    `CNAME` (custom domain breaks), `robots.txt`, `sitemap.xml`, `assets/docs/*` and
    `assets/img/appendix-a.jpg` (linked as official documents), `assets/js/i18n.js`.
