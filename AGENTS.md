@@ -92,6 +92,11 @@ Plus: the language switcher (EN/ES/SW) still works, and any asset you added retu
 
 ## Known issues / open items
 
+- **Donations UI was deliberately removed (August 2026)** — the owner removed the nav
+  "Donate" button and the #donate section because no working donation mechanism exists
+  yet, and advertising one hurts credibility. Do NOT re-add donation buttons, bank
+  details, or donation CTAs unless the owner explicitly says the mechanism works.
+
 - **`Irenemunoz11@gmail.es` (Contact section) is a dead address** — `gmail.es` has no
   MX records, so mail bounces. Waiting for the user to confirm the real address
   (probably `@gmail.com`). Do not "fix" it by guessing.
