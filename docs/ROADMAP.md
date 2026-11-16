@@ -18,7 +18,6 @@ Internal file — not published.
 
 | Item | Needed to unblock |
 |------|-------------------|
-| Facebook link in the socials row (currently plain text) | The Facebook page URL |
 | Google Drive photo/video gallery (`DRIVE_PHOTOS_FOLDER` / `DRIVE_VIDEOS_FOLDER` empty) | Create the two Drive folders in the foundation account, share "Anyone with the link – Viewer", send the folder IDs |
 | Google Search Console + Bing Webmaster verification | Access to the foundation's Google/Microsoft accounts |
 | Google Ad Grants application | Foundation's Google for Nonprofits account (site quality items below help) |
@@ -68,6 +67,8 @@ Internal file — not published.
 ## Done
 
 ### 2026-11-16
+- Contact: Facebook in the socials row is now a link to the foundation's page; added to
+  JSON-LD `sameAs`.
 - Contact: fixed Irene Muñoz's email `Irenemunoz11@gmail.es` → `irenemunoz11@gmail.com`
   (confirmed by owner); sitemap `lastmod` updated.
 

@@ -101,7 +101,6 @@ Plus: the language switcher (EN/ES/SW) still works, and any asset you added retu
   yet, and advertising one hurts credibility. Do NOT re-add donation buttons, bank
   details, or donation CTAs unless the owner explicitly says the mechanism works.
 
-- Facebook in the socials row is plain text — no page URL provided yet.
 - Google Search Console / Bing Webmaster verification and the Google Ad Grants
   application are pending — they require the foundation's own accounts.
 
@@ -114,4 +113,5 @@ Plus: the language switcher (EN/ES/SW) still works, and any asset you added retu
 | Analytics | GoatCounter — `malaikabridgeaway.goatcounter.com` |
 | Instagram | `@malaikabridgeawayfoundation` |
 | TikTok | `@malaikabridgeawayfnd` |
+| Facebook | `https://www.facebook.com/people/Malaika-Bridge-Away-Foundation/61589261579645/` |
 | Contact email | `malaika.bridgeaway@gmail.com` |
