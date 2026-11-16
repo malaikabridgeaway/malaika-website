@@ -43,8 +43,9 @@ NGO (Reg. No. 00NGO/R/9765) in Sumve, Kwimba District, Mwanza. Live at
    `assets/img/appendix-a.jpg` (linked as official documents), `assets/js/i18n.js`.
 4. **Keep the GoatCounter snippet** (last `<script>` in `index.html`) — it is the site's
    only analytics (dashboard: https://malaikabridgeaway.goatcounter.com).
-5. **No files over 50 MB** (GitHub warns; 100 MB is a hard block). The existing 80 MB
-   video is a known grandfathered exception.
+5. **No files over 50 MB** (GitHub warns; 100 MB is a hard block). The site video was
+   re-encoded from 80 MB to ~6 MB in November 2026 (the old blob remains in git history);
+   re-encode any new video before committing (command in `README.md`).
 6. **Internal docs must not reach the published site.** The deploy workflow publishes
    every file in the repo except those deleted in its "Strip internal files" step
    (`.github/workflows/deploy.yml`). Add any new internal file (notes, plans, this

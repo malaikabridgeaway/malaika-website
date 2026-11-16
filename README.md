@@ -18,7 +18,7 @@ assets/js/i18n.js       Translations (English / Spanish / Swahili) + language sw
 assets/img/             Logo, hero photo, social-share image, favicons, constitution appendix
 assets/gallery/         Photo gallery — drop images here (see UPLOAD-GUIDE.md)
 assets/docs/            Certificate, regional context report, academic proposal (PDFs)
-assets/video/           Clean water project video (~80 MB)
+assets/video/           Clean water project video (720p, ~6 MB)
 ```
 
 ## Languages
@@ -31,18 +31,21 @@ directly to a language: `...?lang=es` or `...?lang=sw`. All translations live in
 
 ## Deployment
 
-The site is served by **GitHub Pages** from the `main` branch root, with the custom
-domain `malaikabridgeaway.org` (the `CNAME` file) pointed at GitHub via Namecheap DNS
-and HTTPS enforced. **Every push to `main` redeploys the live site automatically**
-within about a minute — there are no other deployment steps.
+The site is served by **GitHub Pages**, deployed by the GitHub Actions workflow
+`.github/workflows/deploy.yml` (Pages build type "workflow", not branch/Jekyll), with the
+custom domain `malaikabridgeaway.org` (the `CNAME` file) pointed at GitHub via Namecheap
+DNS and HTTPS enforced. **Every push to `main` redeploys the live site automatically**
+within a few minutes. The workflow also rebuilds `gallery.json` from `assets/gallery/`
+and strips internal files (`AGENTS.md`, `CLAUDE.md`, `README.md`, `UPLOAD-GUIDE.md`,
+`docs/`, `.claude/`) before publishing — there is no staging environment.
 
 Visitor analytics: [GoatCounter](https://malaikabridgeaway.goatcounter.com) (snippet at
 the bottom of `index.html`).
 
 ## Notes
 
-- The video is ~80 MB — under GitHub's 100 MB per-file limit, so it pushes fine, but the
-  first push will take a while on a slow connection. If you ever want a faster-loading
-  site, re-encode it smaller with:
-  `ffmpeg -i assets/video/clean-water-project.mp4 -vf scale=720:-2 -crf 28 -preset slow -c:a aac -b:a 96k out.mp4`
+- Keep videos small: re-encode before committing (this is how the current ~6 MB file
+  was made from the 80 MB original), and bump the `?v=` in the `<source>` URL in
+  `index.html` when replacing a file under the same name:
+  `ffmpeg -i in.mp4 -vf scale=720:-2 -c:v libx264 -crf 28 -preset slow -pix_fmt yuv420p -c:a aac -b:a 96k -movflags +faststart out.mp4`
 - No build tools, frameworks or servers needed — it is plain HTML/CSS/JS.

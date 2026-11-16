@@ -21,6 +21,7 @@ Internal file — not published.
 | Google Drive photo/video gallery (`DRIVE_PHOTOS_FOLDER` / `DRIVE_VIDEOS_FOLDER` empty) | Create the two Drive folders in the foundation account, share "Anyone with the link – Viewer", send the folder IDs |
 | Google Search Console + Bing Webmaster verification | Access to the foundation's Google/Microsoft accounts |
 | Google Ad Grants application | Foundation's Google for Nonprofits account (site quality items below help) |
+| Privacy & safeguarding note (draft ready in `docs/drafts/privacy-note.md`, EN/ES/SW) | Owner approves the wording, confirms the photo-consent statement is true, and has the Swahili reviewed by a native speaker; then add it to the footer (3 languages) |
 | Donation section | A working, verified donation mechanism (see AGENTS.md — do not re-add before) |
 | `info@malaikabridgeaway.org` (Namecheap forward → `malaika.bridgeaway@gmail.com` + Gmail "Send mail as") | Owner sets it up and confirms send/receive works; then switch the site's contact email + JSON-LD `email` to it (3 languages) |
 | Google for Nonprofits application (Goodstack verification, Tanzania NGO 00NGO/R/9765 — no US EIN needed) | Apply with `info@` once it works; wait for approval |
@@ -28,19 +29,9 @@ Internal file — not published.
 
 ## Next — ready to do
 
-1. **P1 · Re-encode the 80 MB video** (~720p, CRF 28) or move it to YouTube — biggest
-   cost for mobile visitors and the reason deploys take ~8 min.
-2. **P1 · Fix outdated README deployment note** — README says Pages serves from the
-   `main` branch root; it is actually the GitHub Actions workflow.
-3. **P2 · Image optimisation pass** — add `width`/`height` to images missing them,
-   compress `appendix-a.jpg` (~500 KB), consider WebP.
-4. **P2 · Privacy & safeguarding note** — short trilingual footer section/page:
-   GoatCounter is cookieless, third parties used (Google Fonts, Drive), consent policy for
-   photos of minors. Text must be approved by the owner.
-5. **P2 · `og:locale:alternate` for Swahili** is `sw_KE`; the NGO is Tanzanian →
-   `sw_TZ`.
-6. **P2 · Sitemap `lastmod`** — keep it in sync on each content deploy (set to
-   2026-11-16).
+Nothing unblocked left in this list — pick from the Backlog (top P2 items first) or
+unblock something above. Standing rule: keep `sitemap.xml` `<lastmod>` in sync on every
+content deploy.
 
 ## Backlog
 
@@ -58,6 +49,8 @@ Internal file — not published.
 - **P3 · Lightweight CI checks** in the deploy workflow: HTML validation, broken-link
   check, i18n key parity (en/es/sw) — without committing a package manager.
 - **P3 · Content-Security-Policy meta tag** allowing Fonts, Drive and GoatCounter.
+- **P3 · WebP versions of photos** (`<picture>` with JPEG fallback) — needs a WebP
+  encoder; current JPEGs are already small (≤185 KB).
 - **P3 · Annual report / financial statements** in Documents once available.
 - **P3 · Desktop nav collapses below 1380 px** — revisit so laptops (1280–1366 px) show
   the full menu.
@@ -67,6 +60,15 @@ Internal file — not published.
 ## Done
 
 ### 2026-11-16
+- Video re-encoded 80 MB → 6.3 MB (720×960, CRF 28, faststart), `?v=2` cache-bust.
+- `appendix-a.jpg` recompressed 499 KB → 184 KB (same resolution, text checked legible).
+- `width`/`height` on the nav logo and the 404 logo (all `<img>` now have them; gallery
+  items are sized by CSS).
+- `og:locale:alternate` Swahili `sw_KE` → `sw_TZ`.
+- README deployment section corrected (GitHub Actions workflow, not branch root);
+  AGENTS.md / WEB-BEST-PRACTICES video notes updated.
+- Drafted trilingual privacy & safeguarding note for owner approval
+  (`docs/drafts/privacy-note.md`, not published).
 - Contact: Facebook in the socials row is now a link to the foundation's page; added to
   JSON-LD `sameAs`.
 - Contact: fixed Irene Muñoz's email `Irenemunoz11@gmail.es` → `irenemunoz11@gmail.com`

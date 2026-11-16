@@ -73,8 +73,8 @@ CLS < 0.1, INP < 200 ms.**
   cards ≤ 800 px), compress (JPEG q≈75–80 or WebP), always set `width`/`height` or
   `aspect-ratio` to prevent layout shift, `loading="lazy"` below the fold, and
   `fetchpriority="high"` only on the hero ✅.
-- Video: never preload (`preload="none"` + poster ✅). The 80 MB file should be
-  re-encoded (~720p, CRF 28 → typically 5–15 MB) or moved to YouTube; see ROADMAP.
+- Video: never preload (`preload="none"` + poster ✅). Videos are re-encoded to
+  ~720p, CRF 28 (the site video is ~6 MB ✅); if many more videos come, move them to YouTube.
 - Fonts: at most the two current families, `display=swap` ✅, only weights actually used.
 - JS: small, vanilla, `defer`/`async`; no libraries for things the platform does.
 - Third parties (Drive iframes, fonts, analytics) cost time and privacy — lazy-load
