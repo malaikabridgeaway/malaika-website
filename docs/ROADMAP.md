@@ -18,7 +18,6 @@ Internal file — not published.
 
 | Item | Needed to unblock |
 |------|-------------------|
-| Fix Irene Muñoz's email (`Irenemunoz11@gmail.es` bounces — no MX) | The confirmed correct address |
 | Facebook link in the socials row (currently plain text) | The Facebook page URL |
 | Google Drive photo/video gallery (`DRIVE_PHOTOS_FOLDER` / `DRIVE_VIDEOS_FOLDER` empty) | Create the two Drive folders in the foundation account, share "Anyone with the link – Viewer", send the folder IDs |
 | Google Search Console + Bing Webmaster verification | Access to the foundation's Google/Microsoft accounts |
@@ -41,8 +40,8 @@ Internal file — not published.
    photos of minors. Text must be approved by the owner.
 5. **P2 · `og:locale:alternate` for Swahili** is `sw_KE`; the NGO is Tanzanian →
    `sw_TZ`.
-6. **P2 · Sitemap `lastmod`** still `2026-08-06` although content changed on 2026-08-18
-   — keep it in sync on each content deploy.
+6. **P2 · Sitemap `lastmod`** — keep it in sync on each content deploy (set to
+   2026-11-16).
 
 ## Backlog
 
@@ -68,10 +67,14 @@ Internal file — not published.
 
 ## Done
 
+### 2026-11-16
+- Contact: fixed Irene Muñoz's email `Irenemunoz11@gmail.es` → `irenemunoz11@gmail.com`
+  (confirmed by owner); sitemap `lastmod` updated.
+
 ### 2026-09-22
 - Added `CLAUDE.md`, `docs/WEB-BEST-PRACTICES.md`, `docs/CODE-STANDARDS.md`, this
   roadmap and `.claude/settings.json`; deploy workflow now strips `CLAUDE.md`, `docs/`
-  and `.claude/` from the published site.
+  and `.claude/` from the published site — `f98030b`.
 
 ### 2026-08-18
 - Removed donations UI (nav button + #donate section) until a working donation

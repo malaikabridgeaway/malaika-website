@@ -101,9 +101,6 @@ Plus: the language switcher (EN/ES/SW) still works, and any asset you added retu
   yet, and advertising one hurts credibility. Do NOT re-add donation buttons, bank
   details, or donation CTAs unless the owner explicitly says the mechanism works.
 
-- **`Irenemunoz11@gmail.es` (Contact section) is a dead address** — `gmail.es` has no
-  MX records, so mail bounces. Waiting for the user to confirm the real address
-  (probably `@gmail.com`). Do not "fix" it by guessing.
 - Facebook in the socials row is plain text — no page URL provided yet.
 - Google Search Console / Bing Webmaster verification and the Google Ad Grants
   application are pending — they require the foundation's own accounts.
