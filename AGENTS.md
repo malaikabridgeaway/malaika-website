@@ -2,8 +2,12 @@
 
 Internal instructions for any AI agent (Claude Code, Copilot, Cursor, etc.) editing this
 repo. This file is **not published** on the website — the deploy workflow
-(`.github/workflows/deploy.yml`) deletes it, together with `README.md` and
-`UPLOAD-GUIDE.md`, before uploading the site. Keep it that way.
+(`.github/workflows/deploy.yml`) deletes it, together with `CLAUDE.md`, `README.md`,
+`UPLOAD-GUIDE.md`, `docs/` and `.claude/`, before uploading the site. Keep it that way.
+
+Further guidance: `docs/WEB-BEST-PRACTICES.md` (quality bar), `docs/CODE-STANDARDS.md`
+(conventions and recipes), `docs/ROADMAP.md` (done / blocked / next — update it with
+every change).
 
 ## What this repository is
 

@@ -36,7 +36,7 @@ jobs:
 
       # Internal files: present in the repo, never published on the website.
       - name: Strip internal files from the published site
-        run: rm -f AGENTS.md README.md UPLOAD-GUIDE.md _config.yml
+        run: rm -rf AGENTS.md CLAUDE.md README.md UPLOAD-GUIDE.md _config.yml docs .claude
 
       - uses: actions/upload-pages-artifact@v3
         with:
