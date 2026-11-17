@@ -3,6 +3,11 @@
 const I18N = {
   en: {
     "meta.title": "Malaika Bridge Away Foundation — Empowering Today, Transforming Tomorrow",
+    "404.title": "Page not found — Malaika Bridge Away Foundation",
+    "404.heading": "Page not found",
+    "404.body": "The page you are looking for does not exist — but our work continues.",
+    "404.home": "Go to the homepage",
+    "404.language": "Language",
     "skip": "Skip to content",
     "nav.about": "Who We Are",
     "nav.programs": "What We Do",
@@ -119,6 +124,11 @@ const I18N = {
 
   es: {
     "meta.title": "Fundación Malaika Bridge Away — Empoderando Hoy, Transformando el Mañana",
+    "404.title": "Página no encontrada — Malaika Bridge Away Foundation",
+    "404.heading": "Página no encontrada",
+    "404.body": "La página que buscas no existe, pero nuestro trabajo continúa.",
+    "404.home": "Ir a la página de inicio",
+    "404.language": "Idioma",
     "skip": "Saltar al contenido",
     "nav.about": "Quiénes Somos",
     "nav.programs": "Qué Hacemos",
@@ -235,6 +245,11 @@ const I18N = {
 
   sw: {
     "meta.title": "Malaika Bridge Away Foundation — Kuwezesha Leo, Kubadilisha Kesho",
+    "404.title": "Ukurasa haujapatikana — Malaika Bridge Away Foundation",
+    "404.heading": "Ukurasa haujapatikana",
+    "404.body": "Ukurasa unaoutafuta haupo — lakini kazi yetu inaendelea.",
+    "404.home": "Rudi kwenye ukurasa wa mwanzo",
+    "404.language": "Lugha",
     "skip": "Ruka hadi maudhui",
     "nav.about": "Sisi ni Nani",
     "nav.programs": "Tunachofanya",
@@ -356,7 +371,8 @@ function applyLang(lang) {
   if (!LANGS.includes(lang)) lang = "en";
   const t = I18N[lang];
   document.documentElement.lang = lang;
-  document.title = t["meta.title"];
+  const titleEl = document.querySelector("title[data-i18n]");
+  document.title = t[titleEl ? titleEl.dataset.i18n : "meta.title"];
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const s = t[el.dataset.i18n];
     if (s === undefined) return;
