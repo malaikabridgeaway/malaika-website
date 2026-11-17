@@ -40,7 +40,6 @@ content deploy.
 - **P2 · News / project updates** section with dated posts (borehole progress, Talent
   Club events) — shows the NGO is active.
 - **P2 · Team / board section** with names, roles and photos (consent) to build trust.
-- **P2 · Trilingual 404 page** (currently English only).
 - **P2 · Video captions** (`<track>`) once a transcript exists.
 - **P2 · `hreflang` alternates** for `?lang=es` / `?lang=sw` if non-English search
   traffic matters.
@@ -58,6 +57,10 @@ content deploy.
 ---
 
 ## Done
+
+### 2026-11-17
+- Trilingual 404 page: added an EN/ES/SW selector using the shared language preferences,
+  plus translated page title, message and homepage link.
 
 ### 2026-11-16
 - Video re-encoded 80 MB → 6.3 MB (720×960, CRF 28, faststart), `?v=2` cache-bust.

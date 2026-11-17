@@ -3,23 +3,90 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page not found — Malaika Bridge Away Foundation</title>
+<title data-i18n="404.title">Page not found — Malaika Bridge Away Foundation</title>
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
 <style>
-  body { margin: 0; background: #FDFBF7; color: #231F20; font-family: "Inter", "Segoe UI", system-ui, sans-serif;
-         min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; }
-  img { height: 84px; width: 84px; object-fit: cover; border-radius: 50%; border: 1px solid #EAE4DC; margin-bottom: 22px; }
-  h1 { font-family: Georgia, serif; font-size: 30px; margin: 0 0 10px; }
-  p { color: #4A4A4A; margin: 0 0 26px; }
-  a.btn { background: #B45F3A; color: #fff; text-decoration: none; font-weight: 600; padding: 12px 26px; border-radius: 6px; font-size: 14px; }
-  a.btn:hover { background: #9C4E2D; }
+  :root {
+    --cream: #FDFBF7;
+    --ink: #231F20;
+    --ink-2: #4A4A4A;
+    --line: #EAE4DC;
+    --terra: #B45F3A;
+    --terra-dark: #9C4E2D;
+    --font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--font-body);
+    text-align: center;
+  }
+  .lang-switch {
+    display: flex;
+    margin-bottom: 30px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: #fff;
+  }
+  .lang-btn {
+    min-width: 48px;
+    min-height: 44px;
+    padding: 7px 10px;
+    border: 0;
+    background: none;
+    color: var(--ink-2);
+    font: 600 12.5px var(--font-body);
+    letter-spacing: .5px;
+    cursor: pointer;
+  }
+  .lang-btn + .lang-btn { border-left: 1px solid var(--line); }
+  .lang-btn.active { background: var(--terra); color: #fff; }
+  .lang-btn:hover:not(.active) { color: var(--terra); }
+  :focus-visible { outline: 3px solid var(--terra); outline-offset: 3px; }
+  img {
+    width: 84px;
+    height: 84px;
+    margin-bottom: 22px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  h1 { margin: 0 0 10px; font-family: Georgia, serif; font-size: 30px; }
+  p { margin: 0 0 26px; color: var(--ink-2); }
+  a.btn {
+    padding: 12px 26px;
+    border-radius: 6px;
+    background: var(--terra);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  a.btn:hover { background: var(--terra-dark); }
 </style>
+<script src="/assets/js/i18n.js" defer></script>
 </head>
 <body>
-  <img src="/assets/img/logo.jpg" alt="Malaika Bridge Away Foundation logo" width="84" height="84">
-  <h1>Page not found</h1>
-  <p>The page you are looking for does not exist — but our work continues.</p>
-  <a class="btn" href="/">Go to the homepage</a>
+  <main>
+    <div class="lang-switch" role="group" aria-label="Language" data-i18n-aria="404.language">
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+      <button type="button" class="lang-btn" data-lang="sw" aria-pressed="false">SW</button>
+    </div>
+    <img src="/assets/img/logo.jpg" alt="" width="84" height="84">
+    <h1 data-i18n="404.heading">Page not found</h1>
+    <p data-i18n="404.body">The page you are looking for does not exist — but our work continues.</p>
+    <a class="btn" href="/" data-i18n="404.home">Go to the homepage</a>
+  </main>
 </body>
 </html>
